@@ -58,8 +58,8 @@ const Dashboard = () => {
               <NotificationCardAlert />
               <NotificationCardTime />
               <NotificationCardTime />
-              <NotificationCardTime />
-              <NotificationCardTime />
+              {/* <NotificationCardTime />
+              <NotificationCardTime /> */}
             </div>
           </div>
           <div id="dashboard-whales"></div>
