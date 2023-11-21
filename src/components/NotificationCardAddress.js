@@ -9,11 +9,11 @@ const NotificationCardAddress = () => {
         background: "linear-gradient(180deg, #FFFFFF 60%, #165DFF 98%)",
       }}
     >
-      <div className="flex justify-between">
+      <div className="flex justify-between mb-3">
         <img src={NotificationBellIcon} alt="Notification Bell" />
         <div className="cursor-pointer text-xs font-semibold">Save</div>
       </div>
-      <div className="text-sm font-medium pr-2">
+      <div className="text-sm font-medium pr-2 mb-3.5">
         We’ll be sending notifications to you here
       </div>
       <input className="py-1 px-2 rounded-md"/>
