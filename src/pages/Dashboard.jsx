@@ -24,25 +24,28 @@ const cards = [
 ];
 
 const Dashboard = () => {
-  const [currentCardIndex, setCurrentCardIndex] = useState(0);
+  const [email, setEmail] = useState("");
+  const [isValidEmail, setIsValidEmail] = useState(true);
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      // Move to the next card
-      setCurrentCardIndex((prevIndex) => (prevIndex + 1) % cards.length);
-    }, 1000); // Adjust the interval as needed (e.g., every 5 seconds)
+  const handleEmailSubmit = () => {
+    // Regular expression for basic email validation
+    const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{0,9}$/;
 
-    return () => {
-      // Clear the interval on component unmount
-      clearInterval(intervalId);
-    };
-  }, []);
+    // Check if the email matches the regex
+    if (emailRegex.test(email)) {
+      // Redirect to the welcome page
+      window.location.href = "https://app.loch.one/welcome";
+    } else {
+      // Show an alert for invalid email
+      alert("Please enter a valid email");
+    }
+  };
 
   return (
     <div id="dashboard-container" className="flex w-screen h-screen">
       <div
         id="gradient-dashboard"
-        className="flex flex-col w-[55%] bg-blue-950 p-16"
+        className="flex flex-col w-[50%] bg-blue-950 p-16"
         style={{
           background:
             "radial-gradient(at 0% 100%, rgba(31,169,17,6) 12%, rgba(47,21,208,1) 55%, rgba(0,0,0,1) 90%)",
@@ -59,15 +62,15 @@ const Dashboard = () => {
             </div>
             <div
               id="whales-info"
-              className="flex flex-col justify-start items-end space-y-2 text-white pl-20 text-right"
+              className="flex flex-col justify-start items-end space-y-2 text-white text-right"
             >
               <div>
                 <img src={EyeIcon} alt="Eye" />
               </div>
-              <div className="text-[40px] font-medium self-end">
+              <div className="text-[32px] font-medium w-1/2 leading-10">
                 Watch what the whales are doing
               </div>
-              <div className="opacity-70 self-end">
+              <div className="opacity-70 self-end w-3/4 leading-[20px]">
                 All whales are not equal. Know exactly what the whales impacting
                 YOUR portfolio are doing.
               </div>
@@ -79,15 +82,11 @@ const Dashboard = () => {
             Testimonials
           </div>
           <div className="h-full w-full border-[0.5px] bg-#E5E5E6 mx-4"></div>
-          <div className="flex mt-8">
-            <div className="flex items-end mr-4">
+          <div className="flex mt-8 space-x-8">
+            <div className="flex items-end mr-4 h-full w-28">
               <img src={FooterIcon} alt="Footer" />
             </div>
             <div className="flex overflow-hidden space-x-12">
-              {/* <TestimonialCard />
-              <TestimonialCard />
-              <TestimonialCard />
-               */}
               <Swiper
                 spaceBetween={30}
                 centeredSlides={false}
@@ -121,9 +120,6 @@ const Dashboard = () => {
                     review={`“Managing my own portfolio is helpful and well designed. What’s really interesting is watching the whales though. No one else has made whale tracking so simple.”`}
                   />
                 </SwiperSlide>
-                <SwiperSlide>
-                  <TestimonialCard />
-                </SwiperSlide>
               </Swiper>
             </div>
           </div>
@@ -140,8 +136,13 @@ const Dashboard = () => {
           <input
             className="py-5 px-6 w-full border-2 border-[#E5E5E6] rounded-lg outline-none"
             placeholder="Your email address"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
-          <button className="bg-black text-white py-5 px-7 rounded-lg font-medium">
+          <button
+            onClick={handleEmailSubmit}
+            className="bg-black text-white py-5 px-7 rounded-lg font-medium"
+          >
             Get Started
           </button>
         </div>
