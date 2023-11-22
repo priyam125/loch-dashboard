@@ -44,11 +44,11 @@ const Dashboard = () => {
   return (
     <div
       id="dashboard-container"
-      className="flex flex-col md:flex-row w-screen h-screen"
+      className="flex flex-col xl:flex-row w-screen h-screen"
     >
       <div
         id="gradient-dashboard"
-        className="flex flex-col md:w-[50%] w-full bg-blue-950 md:p-16 p-4"
+        className="flex flex-col xl:w-[55%] w-full bg-blue-950 xl:p-6 2xl:p-14 lg:p-16 lg:pr-0 md:p-8 p-4 2xl:pr-0 pr-4"
         style={{
           background:
             "radial-gradient(at 0% 100%, rgba(31,169,17,6) 12%, rgba(47,21,208,1) 55%, rgba(0,0,0,1) 90%)",
@@ -63,28 +63,32 @@ const Dashboard = () => {
             id="dashboard-whales"
             className="w-full flex flex-col md:flex-row md:justify-between space-y-10 md:space-y-0"
           >
-            <div className="h-full md:w-1/2">
-              <img src={DashboardImage} alt="Dashboard" />
+            <div className="h-full lg:w-3/4 xl:w-full 3xl:w-2/5 w-full md:w-[90%]">
+              <img
+                src={DashboardImage}
+                alt="Dashboard"
+                className="w-full h-full"
+              />
             </div>
             <div
               id="whales-info"
-              className="flex flex-col justify-start items-end space-y-2 text-white text-right"
+              className="flex flex-col justify-start items-end space-y-2 md:space-y-4 lg:space-y-6 xl:space-y-2 text-white text-right lg:pr-16 xl:pr-4 2xl:pr-16"
             >
               <div>
                 <img src={EyeIcon} alt="Eye" />
               </div>
-              <div className="text-[32px] font-medium md:w-1/2 w-[95%] leading-10">
+              <div className="text-[32px] xl:text-[28px] font-medium md:w-[70%] lg:w-3/4 xl:w-4/5 2xl:3/5 w-[95%] leading-10 md:text-[28px] lg:text-[40px]">
                 Watch what the whales are doing
               </div>
-              <div className="opacity-70 self-end md:w-3/4 leading-[20px]">
+              <div className="opacity-70 self-end lg:w-3/4 2xl:w-[90%] 3xl:w-3/4 xl:text-sm 2xl:text-base leading-[20px] md:w-[80%]">
                 All whales are not equal. Know exactly what the whales impacting
                 YOUR portfolio are doing.
               </div>
             </div>
           </div>
         </div>
-        <div id="dashboard-footer" className="flex flex-col my-auto mt-2">
-          <div className="self-end font-medium text-white text-2xl p-4 ">
+        <div id="dashboard-footer" className="flex flex-col my-auto">
+          <div className="self-end font-medium text-white text-2xl p-2">
             Testimonials
           </div>
           <div className="h-full w-full border-[0.5px] bg-#E5E5E6 mx-4"></div>
@@ -141,12 +145,12 @@ const Dashboard = () => {
       </div>
       <div
         id="signUp-container"
-        className="flex flex-col m-auto items-center space-y-8 py-8 md:py-0"
+        className="flex flex-col m-auto items-center space-y-8 py-8 xl:py-0"
       >
-        <div className="md:text-[42px] text-4xl font-medium text-[#B0B1B3] md:w-[70%] w-[85%] leading-[50px] m-auto">
+        <div className="md:text-[42px] text-4xl font-medium text-[#B0B1B3] xl:w-[70%] w-[85%] leading-[50px] m-auto">
           Sign up for exclusive access.
         </div>
-        <div className="md:w-[70%] w-[85%] flex flex-col space-y-6">
+        <div className="xl:w-[70%] w-[85%] flex flex-col space-y-6">
           <input
             className="py-5 px-6 w-full border-2 border-[#E5E5E6] rounded-lg outline-none"
             placeholder="Your email address"
@@ -160,7 +164,7 @@ const Dashboard = () => {
             Get Started
           </button>
         </div>
-        <div className="font-semibold text-[#19191A] md:text-lg p-4 md:p-0 flex items-center justify-center text-center">
+        <div className="font-semibold text-[#19191A] md:text-xl lg:text-lg p-4 md:p-0 flex items-center justify-center text-center">
           You’ll receive an email with an invite link to join.
         </div>
       </div>

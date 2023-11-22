@@ -8,7 +8,7 @@ const NotificationCardAlert = () => {
     setIsChecked(!isChecked);
   };
   return (
-    <div className="h-44 w-48 flex bg-white flex-shrink-0 rounded-lg flex-col p-3">
+    <div className="h-44 w-[189px] lg:w-[220px] xl:w-[189px] flex bg-white flex-shrink-0 rounded-lg flex-col p-3">
       <div className="flex justify-between mb-5">
         <img src={BarChartIcon} alt="BarChart Icon" />
         <input
