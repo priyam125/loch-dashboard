@@ -17,12 +17,6 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import NotificationSection from "../components/NotificationSection";
 import TestimonialCard from "../components/TestimonialCard";
 
-const cards = [
-  <NotificationCardAddress key="address" />,
-  <NotificationCardAlert key="alert" />,
-  <NotificationCardTime key="time" />,
-];
-
 const Dashboard = () => {
   const [email, setEmail] = useState("");
   const [isValidEmail, setIsValidEmail] = useState(true);
