@@ -13,10 +13,13 @@ import NotificationCardTime from "../components/NotificationCardTime";
 
 const NotificationSection = () => {
   return (
-    <div id="dashboard-notification" className="flex w-full space-x-28">
+    <div
+      id="dashboard-notification"
+      className="flex flex-col md:flex-row w-full md:space-x-28 space-y-10 md:space-y-0"
+    >
       <div
         id="notification-info"
-        className="flex flex-col items-start text-white space-y-2 w-[40%] flex-shrink-0"
+        className="flex flex-col items-start text-white space-y-2 md:w-[40%] w-full flex-shrink-0"
       >
         <img src={BellIcon} alt="Notification Bell" />
         <div className="text-[32px] font-medium leading-10">
@@ -32,9 +35,9 @@ const NotificationSection = () => {
         className="flex overflow-hidden space-x-6"
       >
         <Swiper
-          spaceBetween={25}
-          centeredSlides={false}
-          slidesPerView={2}
+          spaceBetween={10}
+          centeredSlides={true}
+          slidesPerView={1}
           freeMode={true}
           loop={true}
           autoplay={{
@@ -45,6 +48,14 @@ const NotificationSection = () => {
           navigation={false}
           modules={[Autoplay, Pagination]}
           className="mySwiper"
+          breakpoints={{
+            // when window width is >= 768px
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 25,
+              centeredSlides: false,
+            },
+          }}
         >
           <SwiperSlide>
             <NotificationCardAddress />

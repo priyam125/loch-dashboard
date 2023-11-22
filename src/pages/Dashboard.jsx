@@ -42,10 +42,13 @@ const Dashboard = () => {
   };
 
   return (
-    <div id="dashboard-container" className="flex w-screen h-screen">
+    <div
+      id="dashboard-container"
+      className="flex flex-col md:flex-row w-screen h-screen"
+    >
       <div
         id="gradient-dashboard"
-        className="flex flex-col w-[50%] bg-blue-950 p-16"
+        className="flex flex-col md:w-[50%] w-full bg-blue-950 md:p-16 p-4"
         style={{
           background:
             "radial-gradient(at 0% 100%, rgba(31,169,17,6) 12%, rgba(47,21,208,1) 55%, rgba(0,0,0,1) 90%)",
@@ -56,8 +59,11 @@ const Dashboard = () => {
           className="flex flex-col mt-5 w-full space-y-10"
         >
           <NotificationSection />
-          <div id="dashboard-whales" className="w-full flex justify-between">
-            <div className="h-full w-1/2">
+          <div
+            id="dashboard-whales"
+            className="w-full flex flex-col md:flex-row md:justify-between space-y-10 md:space-y-0"
+          >
+            <div className="h-full md:w-1/2">
               <img src={DashboardImage} alt="Dashboard" />
             </div>
             <div
@@ -67,10 +73,10 @@ const Dashboard = () => {
               <div>
                 <img src={EyeIcon} alt="Eye" />
               </div>
-              <div className="text-[32px] font-medium w-1/2 leading-10">
+              <div className="text-[32px] font-medium md:w-1/2 w-[95%] leading-10">
                 Watch what the whales are doing
               </div>
-              <div className="opacity-70 self-end w-3/4 leading-[20px]">
+              <div className="opacity-70 self-end md:w-3/4 leading-[20px]">
                 All whales are not equal. Know exactly what the whales impacting
                 YOUR portfolio are doing.
               </div>
