@@ -83,8 +83,8 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-        <div id="dashboard-footer" className="flex flex-col my-auto">
-          <div className="self-end font-medium text-white text-xl">
+        <div id="dashboard-footer" className="flex flex-col my-auto mt-2">
+          <div className="self-end font-medium text-white text-2xl p-4 ">
             Testimonials
           </div>
           <div className="h-full w-full border-[0.5px] bg-#E5E5E6 mx-4"></div>
@@ -96,13 +96,21 @@ const Dashboard = () => {
               <Swiper
                 spaceBetween={30}
                 centeredSlides={false}
-                slidesPerView={2}
+                slidesPerView={1}
                 freeMode={true}
                 loop={true}
                 pagination={false}
                 navigation={false}
                 modules={[Autoplay, Pagination]}
                 className="mySwiper"
+                breakpoints={{
+                  // when window width is >= 768px
+                  768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                    centeredSlides: false,
+                  },
+                }}
               >
                 <SwiperSlide>
                   <TestimonialCard
@@ -133,12 +141,12 @@ const Dashboard = () => {
       </div>
       <div
         id="signUp-container"
-        className="flex flex-col m-auto items-center space-y-8"
+        className="flex flex-col m-auto items-center space-y-8 py-8 md:py-0"
       >
-        <div className="text-[42px] font-medium text-[#B0B1B3] w-[70%] leading-[50px]">
+        <div className="md:text-[42px] text-4xl font-medium text-[#B0B1B3] md:w-[70%] w-[85%] leading-[50px] m-auto">
           Sign up for exclusive access.
         </div>
-        <div className="w-[70%] flex flex-col space-y-6">
+        <div className="md:w-[70%] w-[85%] flex flex-col space-y-6">
           <input
             className="py-5 px-6 w-full border-2 border-[#E5E5E6] rounded-lg outline-none"
             placeholder="Your email address"
@@ -152,7 +160,7 @@ const Dashboard = () => {
             Get Started
           </button>
         </div>
-        <div className="font-semibold text-[#19191A] text-lg">
+        <div className="font-semibold text-[#19191A] md:text-lg p-4 md:p-0 flex items-center justify-center text-center">
           You’ll receive an email with an invite link to join.
         </div>
       </div>
